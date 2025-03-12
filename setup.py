@@ -1,15 +1,25 @@
 import setuptools
 
+
+
 with open("README.md", "r", encoding="utf-8") as f:
     long_description = f.read()
+
+
+
 
 
 __version__ = "0.0.0"
 
 REPO_NAME = "End-to-End-Kidney-Disease-Classification"
-AUTHOR_USER_NAME = "Kunal Mishra"
+AUTHOR_USER_NAME = "kunalmishravitb"
+# Instead of using src directory, we can use the 'cnnClassifier' as the local package because logger is in the '__init__.py' file
 SRC_REPO = "cnnClassifier"
 AUTHOR_EMAIL = "mishrakunal065@gmail.com"
+
+
+
+
 
 
 setuptools.setup(
@@ -27,3 +37,4 @@ setuptools.setup(
     package_dir={"": "src"},
     packages=setuptools.find_packages(where="src")
 )
+
