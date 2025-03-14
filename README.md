@@ -1,183 +1,180 @@
-# Kidney-Disease-Classification-MLflow-DVC
+# 🏥 Kidney Disease Classification using MLflow & DVC 🚀
 
+## 🔄 Workflows
 
-## Workflows
+1⃣ Update `config.yaml`\
+2⃣ Update `secrets.yaml` *(Optional)*\
+3⃣ Update `params.yaml`\
+4⃣ Update the entity\
+5⃣ Update the configuration manager in `src config`\
+6⃣ Update the components\
+7⃣ Update the pipeline\
+8⃣ Update `main.py`\
+9⃣ Update `dvc.yaml`\
+🔟 Update `app.py`
 
-1. Update config.yaml
-2. Update secrets.yaml [Optional]
-3. Update params.yaml
-4. Update the entity
-5. Update the configuration manager in src config
-6. Update the components
-7. Update the pipeline 
-8. Update the main.py
-9. Update the dvc.yaml
-10. app.py
+## 🛠️ How to Run?
 
-# How to run?
-### STEPS:
+### 📝 Steps:
 
-Clone the repository
-
-```bash
-https://github.com/kunalmishravitb/End-to-End-Kidney-Disease-Classification.git
-```
-### STEP 01- Create a conda environment after opening the repository
+### 🔹 Clone the Repository
 
 ```bash
-conda create -n kidney python=3.12 -y
+git clone https://github.com/kunalmishravitb/End-to-End-Kidney-Disease-Classification.git
 ```
+
+### 🔹 Step 1⃣ - Create a Conda Environment
 
 ```bash
-conda activate kidney
+conda create -n kidneys python=3.10 -y
+conda activate kidneys
 ```
 
+### 🔹 Step 2⃣ - Install the Requirements
 
-### STEP 02- install the requirements
 ```bash
 pip install -r requirements.txt
 ```
 
+### ▶️ Run the Application
+
 ```bash
-# Finally run the following command
 python app.py
 ```
 
-Now,
-```bash
-open up you local host and port
-```
+Then, open your browser and visit **localhost:8080**
 
+---
 
+## 🧪 MLflow
 
+📄 [MLflow Documentation](https://mlflow.org/docs/latest/index.html)\
+📺 [MLflow Tutorial](https://youtu.be/qdcHHrsXA48?si=bD5vDS60akNphkem)
 
-
-
-## MLflow
-
-- [Documentation](https://mlflow.org/docs/latest/index.html)
-
-- [MLflow tutorial](https://youtu.be/qdcHHrsXA48?si=bD5vDS60akNphkem)
-
-##### cmd
-- mlflow ui
-
-### dagshub
-[dagshub](https://dagshub.com/)
-
-MLFLOW_TRACKING_URI=https://dagshub.com/entbappy/Kidney-Disease-Classification-MLflow-DVC.mlflow \
-MLFLOW_TRACKING_USERNAME=entbappy \
-MLFLOW_TRACKING_PASSWORD=6824692c47a369aa6f9eac5b10041d5c8edbcef0 \
-python script.py
-
-Run this to export as env variables:
+📌 **Command to start MLflow UI**
 
 ```bash
-
-export MLFLOW_TRACKING_URI=https://dagshub.com/entbappy/Kidney-Disease-Classification-MLflow-DVC.mlflow
-
-export MLFLOW_TRACKING_USERNAME=entbappy 
-
-export MLFLOW_TRACKING_PASSWORD=6824692c47a369aa6f9eac5b10041d5c8edbcef0
-
+mlflow ui
 ```
 
+### 🌐 DagsHub Integration
 
-### DVC cmd
+🔗 [DagsHub](https://dagshub.com/)
 
-1. dvc init
-2. dvc repro
-3. dvc dag
+**Run the following command to set up MLflow tracking:**
 
+```bash
+export MLFLOW_TRACKING_URI=https://dagshub.com/kunalmishravitb/End-to-End-Kidney-Disease-Classification.mlflow
+export MLFLOW_TRACKING_USERNAME=kunalmishravitb
+export MLFLOW_TRACKING_PASSWORD=****************************************
+```
 
-## About MLflow & DVC
+---
 
-MLflow
+## 📂 DVC Commands
 
- - Its Production Grade
- - Trace all of your expriements
- - Logging & taging your model
+1⃣ Initialize DVC
 
+```bash
+dvc init
+```
 
-DVC 
+2⃣ Run the pipeline
 
- - Its very lite weight for POC only
- - lite weight expriements tracker
- - It can perform Orchestration (Creating Pipelines)
+```bash
+dvc repro
+```
 
+3⃣ Visualize the pipeline
 
+```bash
+dvc dag
+```
 
-# AWS-CICD-Deployment-with-Github-Actions
+---
 
-## 1. Login to AWS console.
+## 🏗️ About MLflow & DVC
 
-## 2. Create IAM user for deployment
+### 🚀 **MLflow**
 
-	#with specific access
+✅ Production-grade experiment tracking\
+✅ Logs & tags models for easy reproducibility\
+✅ Model registry & deployment support
 
-	1. EC2 access : It is virtual machine
+### ⚡ **DVC (Data Version Control)**
 
-	2. ECR: Elastic Container registry to save your docker image in aws
+✅ Lightweight for proof-of-concept (PoC) projects\
+✅ Experiment tracking with data management\
+✅ Supports pipeline orchestration
 
+---
 
-	#Description: About the deployment
+# 🌍 AWS CI/CD Deployment with GitHub Actions
 
-	1. Build docker image of the source code
+## 🛡️ 1. Login to AWS Console
 
-	2. Push your docker image to ECR
+## 🔑 2. Create IAM User for Deployment
 
-	3. Launch Your EC2 
+### ✅ Required Permissions:
 
-	4. Pull Your image from ECR in EC2
+1⃣ **EC2 Access** – To manage virtual machines\
+2⃣ **ECR Access** – To store & retrieve Docker images
 
-	5. Lauch your docker image in EC2
+### 🔧 Deployment Steps:
 
-	#Policy:
+🔹 **Build a Docker image** of the source code\
+🔹 **Push the image** to ECR\
+🔹 **Launch an EC2 instance**\
+🔹 **Pull the image** from ECR in EC2\
+🔹 **Run the container** in EC2
 
-	1. AmazonEC2ContainerRegistryFullAccess
+📝 **IAM Policies to Attach:**
 
-	2. AmazonEC2FullAccess
+✔️ `AmazonEC2ContainerRegistryFullAccess`\
+✔️ `AmazonEC2FullAccess`
 
-	
-## 3. Create ECR repo to store/save docker image
-    - Save the URI: 566373416292.dkr.ecr.us-east-1.amazonaws.com/chicken
+---
 
-	
-## 4. Create EC2 machine (Ubuntu) 
+## 🏋️ 3. Create an ECR Repository
 
-## 5. Open EC2 and Install docker in EC2 Machine:
-	
-	
-	#optinal
+🔹 Save the **ECR URI**: `*****.dkr.ecr.us-east-1.amazonaws.com/kidney-disease-classification` *(Masked for security)*
 
-	sudo apt-get update -y
+---
 
-	sudo apt-get upgrade
-	
-	#required
+## 💻 4. Create an EC2 Instance (Ubuntu)
 
-	curl -fsSL https://get.docker.com -o get-docker.sh
+## 🛠️ 5. Install Docker in EC2
 
-	sudo sh get-docker.sh
+```bash
+# Optional
+sudo apt-get update -y
+sudo apt-get upgrade -y
 
-	sudo usermod -aG docker ubuntu
+# Required
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+sudo usermod -aG docker ubuntu
+newgrp docker
+```
 
-	newgrp docker
-	
-# 6. Configure EC2 as self-hosted runner:
-    setting>actions>runner>new self hosted runner> choose os> then run command one by one
+---
 
+## 🔄 6. Configure EC2 as a Self-Hosted Runner
 
-# 7. Setup github secrets:
+Navigate to **GitHub → Settings → Actions → Runners → New Self-Hosted Runner**,\
+then follow the setup commands.
 
-    AWS_ACCESS_KEY_ID=
+---
 
-    AWS_SECRET_ACCESS_KEY=
+## 🔐 7. Set Up GitHub Secrets
 
-    AWS_REGION = us-east-1
+```bash
+AWS_ACCESS_KEY_ID=***************
+AWS_SECRET_ACCESS_KEY=***************
+AWS_REGION=us-east-1
+AWS_ECR_LOGIN_URI=*****.dkr.ecr.us-east-1.amazonaws.com
+ECR_REPOSITORY_NAME=kidney-disease-classification
+```
 
-    AWS_ECR_LOGIN_URI = demo>>  566373416292.dkr.ecr.ap-south-1.amazonaws.com
-
-    ECR_REPOSITORY_NAME = simple-app
-
+---
 

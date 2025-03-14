@@ -1,6 +1,10 @@
-# entity: return type of the function. So here it is return type of DataIngestionConfig function
+# entity: It stores return type of the function.
 from dataclasses import dataclass # dataclass is a decorator. It is a class decorator which helps to define the class with attributes and methods.
 from pathlib import Path
+
+
+
+
 
 # Whatever I have written in the 'config.yaml' file, I am returning it as a class object.
 @dataclass(frozen=True)
@@ -44,5 +48,12 @@ class TrainingConfig:
 
 
 
-
+@dataclass(frozen=True)
+class EvaluationConfig:
+    path_of_model: Path
+    training_data: Path
+    all_params: dict
+    mlflow_uri: str
+    params_image_size: list
+    params_batch_size: int
 
