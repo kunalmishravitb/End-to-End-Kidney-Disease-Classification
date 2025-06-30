@@ -2,15 +2,15 @@
 
 ## 🔄 Workflows
 
-1⃣ Update `config.yaml`\
-2⃣ Update `secrets.yaml` *(Optional)*\
-3⃣ Update `params.yaml`\
-4⃣ Update the entity\
-5⃣ Update the configuration manager in `src config`\
-6⃣ Update the components\
-7⃣ Update the pipeline\
-8⃣ Update `main.py`\
-9⃣ Update `dvc.yaml`\
+1️⃣ Update `config.yaml`\
+2️⃣ Update `secrets.yaml` *(Optional)*\
+3️⃣ Update `params.yaml`\
+4️⃣ Update the entity\
+5️⃣ Update the configuration manager in `src config`\
+6️⃣ Update the components\
+7️⃣ Update the pipeline\
+8️⃣ Update `main.py`\
+9️⃣ Update `dvc.yaml`\
 🔟 Update `app.py`
 
 ## 🛠️ How to Run?
@@ -23,14 +23,14 @@
 git clone https://github.com/kunalmishravitb/End-to-End-Kidney-Disease-Classification.git
 ```
 
-### 🔹 Step 1⃣ - Create a Conda Environment
+### 🔹 Step 1️⃣ - Create a Conda Environment
 
 ```bash
 conda create -n kidneys python=3.10 -y
 conda activate kidneys
 ```
 
-### 🔹 Step 2⃣ - Install the Requirements
+### 🔹 Step 2️⃣ - Install the Requirements
 
 ```bash
 pip install -r requirements.txt
@@ -73,19 +73,19 @@ export MLFLOW_TRACKING_PASSWORD=****************************************
 
 ## 📂 DVC Commands
 
-1⃣ Initialize DVC
+1️⃣ Initialize DVC
 
 ```bash
 dvc init
 ```
 
-2⃣ Run the pipeline
+2️⃣ Run the pipeline
 
 ```bash
 dvc repro
 ```
 
-3⃣ Visualize the pipeline
+3️⃣ Visualize the pipeline
 
 ```bash
 dvc dag
